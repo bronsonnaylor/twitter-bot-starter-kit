@@ -1,11 +1,12 @@
-import datetime
-from authentication import api
+#Convert tweet to 3d mesh.
 
-message = "The time is {}. Do you know where your twitter bot is?".format(
-    datetime.datetime.now().strftime('%-I:%m %p'))
-print('posting this clever message to twitter:')
-print(message)
+from tweepy.streaming import StreamListener
+from tweepy import OAuthHandler
+from tweepy import Stream
+import os
 
-api.update_status(message)
+from dotenv import load_dotenv
+load_dotenv()
 
-print('success!')
+
+print(os.getenv('CONSUMER_KEY'))
